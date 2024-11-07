@@ -36,8 +36,12 @@ def parse_arguments():
 
     # Auto-detect device if not specified
     if args.device is None:
-        args.device = "cuda" if torch.cuda.is_available() else "cpu"
-
+        if torch.cuda.is_available():
+            args.device = "cuda"
+        elif torch.mps.device_count() > 0:
+            args.device = "mps"
+        else:
+            args.device = "cpu"
     return args
 
 
@@ -180,7 +184,9 @@ def majority_vote(all_predictions, min_probability_threshold):
     total_votes = len(filtered_predictions)
 
     # Get the majority prediction and its confidence
-    majority_pred = vote_counts.most_common(1)["Write Your Code Here"]["Write Your Code Here"]
+    # print(vote_counts)
+    # print(vote_counts.most_common(1))
+    majority_pred = vote_counts.most_common(1)[0][0]
     confidence = vote_counts[majority_pred] / total_votes
 
     # Select the rationale from the most confident prediction
