@@ -2,3 +2,23 @@ __pycache__/
 .DS_Store
 models/
 predictions/
+
+# tex compiled files
+*.aux
+*.log
+*.pdf
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+*.fdb_latexmk
+*.fls
+*.log
+*.gz
+*.dvi
+*.synctex(busy)
+*.synctex
+*.synctex.gz(busy)
+*.run.xml
+*.bcf

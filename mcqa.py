@@ -121,7 +121,7 @@ def get_next_token_probabilities(model, tokenizer, prompt, options, device, max_
             **inputs,
             max_new_tokens=max_new_tokens,
             pad_token_id=tokenizer.eos_token_id,
-            temperature=0.6,
+            temperature=1.0,
             do_sample=True,
             num_return_sequences=1,
             eos_token_id=tokenizer.eos_token_id,
@@ -184,8 +184,6 @@ def majority_vote(all_predictions, min_probability_threshold):
     total_votes = len(filtered_predictions)
 
     # Get the majority prediction and its confidence
-    # print(vote_counts)
-    # print(vote_counts.most_common(1))
     majority_pred = vote_counts.most_common(1)[0][0]
     confidence = vote_counts[majority_pred] / total_votes
 
