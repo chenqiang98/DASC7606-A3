@@ -13,6 +13,7 @@ cp report/README.md 3036370891/README.md
 cp mcqa.py 3036370891/src/mcqa.py
 cp modeling_llama.py 3036370891/src/modelling_llama.py
 cp tokenization_llama_fast.py 3036370891/src/tokenization_llama_fast.py
+cp configuration_llama.py 3036370891/src/configuration_llama.py
 cp ./scripts/get_accuracy.py 3036370891/src/get_accuracy.py
 cp -r ./predictions 3036370891/predictions
 
