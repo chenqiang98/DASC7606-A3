@@ -63,10 +63,10 @@ def ensure_model_downloaded(model_path):
         return model_path
 
     try:
-        print(f"Downloading model unsloth/Llama-3.2-1B-Instruct to {model_path}...")
+        print(f"Downloading model unsloth/Llama-3.2-3B-Instruct to {model_path}...")
         os.makedirs(os.path.dirname(model_path), exist_ok=True)
         snapshot_download(
-            repo_id="unsloth/Llama-3.2-1B-Instruct",
+            repo_id="unsloth/Llama-3.2-3B-Instruct",
             local_dir=model_path,
             local_dir_use_symlinks=False
         )
@@ -121,7 +121,7 @@ def get_next_token_probabilities(model, tokenizer, prompt, options, device, max_
             **inputs,
             max_new_tokens=max_new_tokens,
             pad_token_id=tokenizer.eos_token_id,
-            temperature=1.0,
+            temperature=0.2,
             do_sample=True,
             num_return_sequences=1,
             eos_token_id=tokenizer.eos_token_id,
