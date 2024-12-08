@@ -43,6 +43,9 @@ Install the following packages:
 pip install torch==1.13
 pip install transformers==4.44.2
 pip install huggingface_hub==0.26.2
+pip install numpy==1.26.4
+pip install accelerate==0.22.0
+pip install jinja2==3.1.2
 ```
 
 ## 3 Working on the Assignment
